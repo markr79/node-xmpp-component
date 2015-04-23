@@ -21,7 +21,19 @@
     "url": "https://github.com/node-xmpp/node-xmpp-component/issues"
   },
   "dependencies": {
-    "node-xmpp-core": "^1.0.0-alpha13"
+    "node-xmpp-core": "^1.0.0-alpha13",
+    "bluebird": "^2.3.2",
+    "jingle": "^1.5.1",
+    "jxt": "^3.0.1",
+    "jxt-xmpp-types": "^2.1.0",
+    "lodash.assign": "^3.0.0",
+    "lodash.filter": "^3.1.0",
+    "lodash.foreach": "^3.0.2",
+    "lodash.isarray": "^3.0.1",
+    "lodash.uniq": "^3.1.0",
+    "uuid": "^2.0.1",
+    "wildemitter": "^1.0.1",
+    "xhr": "^2.0.1"
   },
   "devDependencies": {
     "grunt-mocha-cli": "^1.12.0",
