@@ -87,6 +87,7 @@ describe('Authentication', function() {
         onSocket = function(socket) {
             socket.once('data', function() {
                 socket.once('data', function() {
+                    component.connection.emit('data', '<stream:stream>')
                     component.connection.emit('data', '<handshake/>')
                 })
                 component.connection.emit('streamStart', { from: 'shakespeare.lit', id: 555 })
