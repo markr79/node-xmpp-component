@@ -14,7 +14,7 @@ describe('Authentication', function() {
     var onSocket = function () { }
     var duringafter = false
     var server = null
-
+    this.timeout(1000);
     before(function(done) {
         server = net.createServer(function (socket) {
             server.on('shutdown', function () {
@@ -83,10 +83,11 @@ describe('Authentication', function() {
     })
 
     it('Reports \'connected\' once connected', function(done) {
+        this.timeout(5000)
         onSocket = function(socket) {
             socket.once('data', function() {
                 socket.once('data', function() {
-                    component.connection.emit('stanza', ltx.parse('<handshake/>'))
+                    component.connection.emit('data', '<handshake/>')
                 })
                 component.connection.emit('streamStart', { from: 'shakespeare.lit', id: 555 })
             })
