@@ -8,6 +8,5 @@ exports.JID = require('node-xmpp-core').JID;
 module.exports = function(opts) {
   var component = new Component(opts);
   component.use(require('./lib/plugins'));
-  console.log(component.jingle);
   return component;
 };
