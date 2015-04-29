@@ -35,6 +35,7 @@ var connectClients = function(done) {
 }
 
 describe('Integration tests', function() {
+    this.timeout(2000)
 
     beforeEach(function(done) {
         options = {
@@ -44,7 +45,7 @@ describe('Integration tests', function() {
             port: 5347
         }
         user = (+new Date()).toString(36)
-        exec('sudo service prosody start', function() {
+        exec('prosodyctl start', function() {
             setTimeout(function() {
                 connectClients(done)
             }, 1000)
@@ -124,7 +125,7 @@ describe('Integration tests', function() {
         component.on('close', function() {
             done()
         })
-        exec('sudo service prosody stop', function() {})
+        exec('prosodyctl stop', function() {})
     })
 
 })
